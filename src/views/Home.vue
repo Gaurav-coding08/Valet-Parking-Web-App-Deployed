@@ -7,6 +7,7 @@
           <h2 style="color: white;"><i class="bx bx1-firebase"></i>Valet Parking Software</h2><br>
           <!-- <div class="text-sci" style="color: white;"> -->
           <h2>Welcome!</h2>
+          <br>
           <!-- </div> -->
         </div>
         <!-- <div class="loginn"> -->
@@ -21,7 +22,7 @@
                 <label for="password" class="form-label" style="color: aliceblue;">Password</label>
                 <input type="password" class="form-control" placeholder="Password" required v-model="adminpass">
               </div>
-              <button type="button" class="btn btn-primary" @click="checklogin">Login</button>
+              <button type="button" class="btn btn-primary" @keyup.enter="checklogin" @click="checklogin" >Login</button>
             </form>
           </div>
         <!-- </div> -->
@@ -158,7 +159,7 @@ export default {
   text-align: center;
   height: auto;
   background: transparent;
-  padding-top: 40px; 
+  padding-top: 10px; 
   color: #e4e4e4;
   }
 
@@ -189,6 +190,7 @@ export default {
       max-width: 400px;
       margin-left: auto;
       margin-right: auto;
+      padding-bottom: 40px; 
 }
 
   @media only screen and (min-width: 768px) {

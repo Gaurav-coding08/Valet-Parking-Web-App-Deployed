@@ -106,7 +106,7 @@
     align-items: center;
   }
   .cars{
-    padding-top: 300px;
+    padding-top: 430px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,7 +121,7 @@
     overflow-y: auto;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-  white-space: nowrap;
+    white-space: nowrap;
   }
   
 
@@ -159,13 +159,14 @@
   }
   
   .cars {
-    padding-top: 200px;
+    padding-top: 380px;
+    padding-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1vh;
     backdrop-filter: blur(20px);
-    max-width: 500px;
+    max-width: 600px;
     max-height: 65vh;
      /* Adjust the height as per your preference */
     overflow-y: scroll;

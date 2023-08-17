@@ -1,12 +1,19 @@
 <template>
  <body>
-  <nav>
-    <router-link to="/" :class="{ 'custom-link-active': $route.path === '/' }">Login</router-link> |
-    <router-link to="/Services" :class="{ 'custom-link-active': $route.path === '/Services' }">Services</router-link> |
-    <router-link to="/Registration" :class="{ 'custom-link-active': $route.path === '/Registration' }">Registration</router-link> |
-    <router-link to="/Unregister" :class="{ 'custom-link-active': $route.path === '/Unregister' }">Unregistration</router-link> |
-    <router-link to="/Employeeregis" :class="{ 'custom-link-active': $route.path === '/Employeeregis' }">New Employee Registration</router-link> |
-    <router-link to="/edit_seecars" :class="{ 'custom-link-active': $route.path === '/edit_seecars' }">Edit & View Cars</router-link>
+  <nav >
+      <div class="mobile-menu-toggle" @click="toggleMobileMenu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="menu-links" :class="{ 'mobile-menu-open': isMobileMenuOpen }">
+        <router-link to="/" :class="{ 'custom-link-active': $route.path === '/' }">Login</router-link> |
+        <router-link to="/Services" :class="{ 'custom-link-active': $route.path === '/Services' }">Services</router-link> |
+        <router-link to="/Registration" :class="{ 'custom-link-active': $route.path === '/Registration' }">Registration</router-link> |
+        <router-link to="/Unregister" :class="{ 'custom-link-active': $route.path === '/Unregister' }">Unregistration</router-link> |
+        <router-link to="/Employeeregis" :class="{ 'custom-link-active': $route.path === '/Employeeregis' }">New Employee Registration</router-link> |
+        <router-link to="/edit_seecars" :class="{ 'custom-link-active': $route.path === '/edit_seecars' }">Edit & View Cars</router-link>
+      </div>
   </nav>
   <div class="containerrrr">
     <div class="row">
@@ -43,13 +50,20 @@ export default {
   name: 'Services',
   data() {
   return {
-    showOptions: false
+    showOptions: false,
+    isMobileMenuOpen: false
   }
 },
 mounted() {
   setTimeout(() => {
     this.showOptions = true;
   }, 100);
+},
+methods:{
+  
+    toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+      }
 }
 }
 
@@ -94,5 +108,29 @@ mounted() {
       .options-container {
         margin-top: 50px;
       }
+
+      .menu-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
+
+  .mobile-menu-open {
+    display: block;
+  }
     }
   </style>

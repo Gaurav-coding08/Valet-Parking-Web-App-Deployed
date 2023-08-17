@@ -1,12 +1,19 @@
 <template>
 <body>
   <nav >
-    <router-link to="/" :class="{ 'custom-link-active': $route.path === '/' }">Login</router-link> |
-    <router-link to="/Services" :class="{ 'custom-link-active': $route.path === '/Services' }">Services</router-link> |
-    <router-link to="/Registration" :class="{ 'custom-link-active': $route.path === '/Registration' }">Registration</router-link> |
-    <router-link to="/Unregister" :class="{ 'custom-link-active': $route.path === '/Unregister' }">Unregistration</router-link> |
-    <router-link to="/Employeeregis" :class="{ 'custom-link-active': $route.path === '/Employeeregis' }">New Employee Registration</router-link> |
-    <router-link to="/edit_seecars" :class="{ 'custom-link-active': $route.path === '/edit_seecars' }">Edit & View Cars</router-link>
+      <div class="mobile-menu-toggle" @click="toggleMobileMenu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="menu-links" :class="{ 'mobile-menu-open': isMobileMenuOpen }">
+        <router-link to="/" :class="{ 'custom-link-active': $route.path === '/' }">Login</router-link> |
+        <router-link to="/Services" :class="{ 'custom-link-active': $route.path === '/Services' }">Services</router-link> |
+        <router-link to="/Registration" :class="{ 'custom-link-active': $route.path === '/Registration' }">Registration</router-link> |
+        <router-link to="/Unregister" :class="{ 'custom-link-active': $route.path === '/Unregister' }">Unregistration</router-link> |
+        <router-link to="/Employeeregis" :class="{ 'custom-link-active': $route.path === '/Employeeregis' }">New Employee Registration</router-link> |
+        <router-link to="/edit_seecars" :class="{ 'custom-link-active': $route.path === '/edit_seecars' }">Edit & View Cars</router-link>
+      </div>
   </nav>
   <div v-if="showregistr">
    <div class="containerrr my-5">
@@ -69,7 +76,8 @@ export default {
     showSuccessMessage:false,
     showerrorMessage:false,
     // isLoggedIn:false,
-    showregistr:true
+    showregistr:true,
+    isMobileMenuOpen: false
   }
  },
  
@@ -121,6 +129,9 @@ export default {
         this.resetData();
       }
   },
+    toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+      },
   resetData(){
     this.APIData=[],
     this.car_number='',
@@ -145,5 +156,30 @@ export default {
       margin-left: auto;
       margin-right: auto;
 }
+
+@media only screen and (max-width: 600px) {
+    .menu-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
+
+  .mobile-menu-open {
+    display: block;
+  }}
 
 </style>
