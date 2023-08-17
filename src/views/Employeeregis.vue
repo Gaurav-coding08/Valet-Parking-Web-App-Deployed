@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import { getAPI } from '/Users/gauravrastogi/Desktop/valet_parking_vue/valet/axios-api.js'
+// import { getAPI } from '/Users/gauravrastogi/Desktop/valet_parking_vue/valet/axios-api.js'
 import axios from 'axios';
-import router from '/Users/gauravrastogi/Desktop/valet_parking_vue/valet/src/router'
+import router from '@/router'
 
 export default {
     name: 'Employeeregis',

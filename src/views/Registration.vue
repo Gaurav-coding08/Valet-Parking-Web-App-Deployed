@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { getAPI } from '/Users/gauravrastogi/Desktop/valet_parking_vue/valet/axios-api.js'
+// import { getAPI } from '/Users/gauravrastogi/Desktop/valet_parking_vue/valet/axios-api.js'
 import axios from 'axios';
 
 export default {
