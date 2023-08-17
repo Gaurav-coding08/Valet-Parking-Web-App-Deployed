@@ -99,7 +99,7 @@
   <style>
   /* Add your CSS styles here */
   .body{
-    background: url('/Users/gauravrastogi/Desktop/valet_parking_vue/valet/cosmic-2.jpg') no-repeat;
+    background: url('/cosmic-2.jpg') no-repeat;
     /* padding-top: 90px; */
     display: flex;
     justify-content: center;

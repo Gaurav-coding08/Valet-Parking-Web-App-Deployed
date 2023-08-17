@@ -135,7 +135,7 @@ export default {
     right: 0;
     width: 100%;
     height: 100vh;
-    background: url('/Users/gauravrastogi/Desktop/valet_parking_vue/valet/cosmic-2.jpg') no-repeat;
+    background: url('/cosmic-2.jpg') no-repeat;
     background-size: cover;
     background-position: center;
   }
